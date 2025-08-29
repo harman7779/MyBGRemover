@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Prompt Image Generator - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Animate.css for smooth fade-in effects -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    /* Hover effects */
+    .hover-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    .hover-img {
+      transition: transform 0.4s ease;
+    }
+    .hover-img:hover {
+      transform: scale(1.05);
+    }
+      .Waves {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      bottom: 0;
+      left: 0;
+    }
+
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 100px;
+      background: url('/wave.png') repeat-x;
+      background-size: 1000px 100px;
+    }
+
+    .wave#wave1 {
+      z-index: 1000;
+      opacity: 1;
+      bottom: 0;
+      animation: animateWave 4s linear infinite;
+    }
+
+    .wave#wave2 {
+      z-index: 999;
+      opacity: 0.5;
+      bottom: 10px;
+      animation: animateWaveReverse 4s linear infinite;
+    }
+
+    .wave#wave3 {
+      z-index: 1000;
+      opacity: 0.2;
+      bottom: 15px;
+      animation: animateWave 3s linear infinite;
+    }
+
+    .wave#wave4 {
+      z-index: 999;
+      opacity: 0.7;
+      bottom: 20px;
+      animation: animateWaveReverse 3s linear infinite;
+    }
+
+    @keyframes animateWave {
+      0% {
+        background-position-x: 1000px;
+      }
+      100% {
+        background-position-x: 0px;
+      }
+    }
+
+    @keyframes animateWaveReverse {
+      0% {
+        background-position-x: 0px;
+      }
+      100% {
+        background-position-x: 1000px;
+      }
+    }
+    
+    .step-section {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .step-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    /* Left Side Image */
+    .step-image {
+      flex: 1;
+     
+      display: flex;
+      justify-content: center;
+    }
+/* Small devices (≥600px) */
+@media (min-width: 300px) {
+   .step-image img {
+    border-radius: 20px; 
+ }
+}
+@media (min-width: 350px) {
+   .step-image img {
+    border-radius: 25px;
+ }
+}
+@media (min-width: 400px) {
+   .step-image img {
+    border-radius: 30px;
+ }
+}
+@media (min-width: 450px) {
+   .step-image img {
+    border-radius: 35px;
+ } 
+}
+@media (min-width: 500px) {
+   .step-image img {
+    border-radius: 40px;
+ }
+}
+@media (min-width: 550px) {
+   .step-image img {
+    border-radius: 45px;
+ }
+}
+@media (min-width: 600px) {
+   .step-image img {
+    border-radius: 50px;
+ }
+}
+@media (min-width: 700px) {
+   .step-image img {
+    border-radius: 60px;
+ }
+}
+
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+   .step-image img {
+    border-radius: 60px;
+ }
+}
+@media (min-width: 850px) {
+   .step-image img {
+    border-radius: 70px;
+ }
+}
+@media (min-width: 950px) {
+   .step-image img {
+    border-radius: 80px;
+ }
+}
+
+/* Laptops (≥1024px) */
+@media (min-width: 1024px) {
+ .step-image img {
+    border-radius: 90px;
+ }
+}
+
+/* Desktops (≥1280px) */
+@media (min-width: 1150px) {
+  .step-image img {
+    border-radius: 95px;
+ }
+}
+@media (min-width: 1250px) {
+  .step-image img {
+    border-radius: 95px;  
+ }
+}
+@media (min-width: 1350px) {
+  .step-image img {
+    border-radius: 98px;
+ }
+}
+
+
+/* Large Screens (≥1440px) */
+@media (min-width: 1440px) {
+  .step-image img {
+    border-radius: 100px;
+ }
+}
+
+/* Ultra Wide (≥1920px) */
+@media (min-width: 1920px) {
+ .step-image img {
+    border-radius: 100px;
+ }
+  
+}
+    .step-image img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+     
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .step-image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Right Side Content */
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .step-content p {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .step-content a {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #4f46e5, #6366f1);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(79,70,229,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .step-content a:hover {
+      background: #4338ca;
+      transform: scale(1.05);
+    }
+    .hero {
+      text-align:center;
+      padding:80px 20px;
+    }
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+      animation: zoomIn 1s ease;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin:0 auto 30px;
+      color:#4b5563;
+      animation: fadeUp 1.5s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center animate__animated animate__fadeInDown">
+      <h1 class="text-4xl md:text-5xl font-extrabold">AI Prompt Image Generator</h1>
+      <p class="mt-4 text-lg max-w-2xl mx-auto">Write creative prompts and generate stunning AI-powered images instantly.</p>
+      <div class="mt-6">
+        <a href="https://huggingface.co/spaces/Jesse311/nsfw_gen?not-for-all-audiences=true" class="px-6 py-3 bg-white text-indigo-700 font-semibold rounded-xl shadow hover:scale-105 transition">Try Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Features Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8">
+    <div class="md:col-span-3 text-center mb-8 reveal">
+      <h2 class="text-3xl font-bold">What is this website?</h2>
+      <p class="mt-2 text-slate-600">This tool lets you create AI-generated images from text prompts. Customize style, size, and other settings easily.</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-2xl shadow hover-card reveal">
+      <h3 class="text-xl font-semibold mb-2">Easy to Use</h3>
+      <p class="text-slate-600">Just type a prompt, select style, and click generate.</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-2xl shadow hover-card reveal">
+      <h3 class="text-xl font-semibold mb-2">Multiple Styles</h3>
+      <p class="text-slate-600">Choose from photorealism, digital art, anime, and more.</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-2xl shadow hover-card reveal">
+      <h3 class="text-xl font-semibold mb-2">Save & Share</h3>
+      <p class="text-slate-600">Download your creations and share with friends.</p>
+    </div>
+      
+  </section>
+  
+  <!-- Mid Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Image Generated by Prompt</h1>
+      <p class="text-slate-600 mb-6">Our AI tool can generate stunning visuals from just a few words. Simply type your imagination, and let the AI bring it to life with realistic or artistic styles.</p>
+      <a href="https://huggingface.co/spaces/Jesse311/nsfw_gen?not-for-all-audiences=true" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow hover:bg-indigo-700 transition hover:scale-105">Try Now</a>
+    </div>
+    <div class="flex justify-center reveal">
+      <img src="/b460b14a-f4e1-4014-9a64-da3c79f33c6a.jpeg" alt="AI generated sample" class="rounded-xl shadow-lg max-w-full h-auto hover-img">
+    </div>
+  </section>
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div class="flex justify-center reveal">
+      <img src="/FAIRYPINKWOMEN.jpeg" alt="AI generated sample" class="rounded-xl shadow-lg max-w-full h-auto hover-img">
+    </div>
+    <div class="reveal">
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Image Generated by Prompt</h1>
+      <p class="text-slate-600 mb-6">Type Prompt - Pink fairy, woman, flowery pastel, complex contrast, intricate.
+        <br>Get image accouding to your imagine
+      </p>
+      <a href="https://huggingface.co/spaces/Jesse311/nsfw_gen?not-for-all-audiences=true" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow hover:bg-indigo-700 transition hover:scale-105">Try Now</a>
+    </div>
+   
+  </section>
+  <!-- Your original slider code unchanged -->
+<!-- Section -->
+  <section class="step-section">
+    <div class="step-container">
+      
+      <!-- Left Side Image -->
+      <div class="step-image">
+        <img src="/mobilesteprompt (2).png" alt="AI generated sample">
+      </div>
+      
+      <!-- Right Side Content -->
+      <div class="step-content">
+        <h1>STEP 1</h1>
+        <p> Write Prompt & Generate<BR>
+Type your prompt (the image you want) in the box.
+Click the Generate button. </p>
+
+        <a href="https://huggingface.co/spaces/Jesse311/nsfw_gen?not-for-all-audiences=true">Write Prompt</a>
+      </div>
+
+    </div>
+    
+  </section>
+
+  <section class="step-section">
+    <div class="step-container">
+      <!-- Right Side Content -->
+      <div class="step-content">
+        <h1>STEP 2</h1>
+        <p>Hold the Image<BR>
+
+When the image is generated, press and hold on it.
+
+Download the Image
+
+ </p>
+        <a href="https://huggingface.co/spaces/Jesse311/nsfw_gen?not-for-all-audiences=true">Hold the Image</a>
+      </div>
+ <!-- Left Side Image -->
+      <div class="step-image">
+        <img src="/mobilesteprompt (3).png" alt="AI generated sample">
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="step-section">
+    <div class="step-container">
+      
+      <!-- Left Side Image -->
+      <div class="step-image">
+        <img src="/mobilesteprompt (1).png" alt="AI generated sample">
+      </div>
+      
+      <!-- Right Side Content -->
+      <div class="step-content">
+        <h1>STEP 3</h1>
+        <p>A popup menu will appear. <BR>
+
+Tap Download / Save image to save it to your device..</p>
+</p>
+        <a href="https://huggingface.co/spaces/Jesse311/nsfw_gen?not-for-all-audiences=true">Download Image</a>
+      </div>
+
+    </div>
+    
+  </section>
+  <section class="hero">
+  <h2>✨Help us grow free tools!</h2>
+  <p>Support this AI tool so we can bring more free features to you faster.</p>
+  </section>
+  <!-- Related Tools Section -->
+ 
+  <section class="bg-slate-100 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-8 reveal">Other Tools You Might Like</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow p-4 hover-card reveal">
+         <a href="/Index.HTML"> <img src="/FREE_AI_BACKGROUND_REMOVER.png" class="rounded-md mb-3 hover-img" alt="Tool 1"></a>
+          <h3 class="font-semibold text-lg">AI Background Remover</h3>
+          <p class="text-sm text-slate-600">Remove image background instantly with AI.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 hover-card reveal">
+          <img src="/comingsoon.png" class="rounded-md mb-3 hover-img" alt="Tool 2">
+          <h3 class="font-semibold text-lg">AI Music Creator</h3>
+          <p class="text-sm text-slate-600">Compose background music and beats with AI.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 hover-card reveal">
+          <img src="/comingsoon.png" class="rounded-md mb-3 hover-img" alt="Tool 3">
+          <h3 class="font-semibold text-lg">AI Video Editor</h3>
+          <p class="text-sm text-slate-600">Edit and enhance videos automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-center mb-8 reveal">Example AI Generated Images</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="/0ab94900-7939-4e2e-bff3-8d20dc1dc3a8.jpeg" class="rounded-lg shadow hover-img reveal">
+      <img src="/73308110-b214-42c4-a3e6-8114ab29ddc7.jpeg" class="rounded-lg shadow hover-img reveal">
+      <img src="/7b29620e-f160-4f96-bd9a-f4974185dabf.jpeg" class="rounded-lg shadow hover-img reveal">
+      <img src="/image (2).webp" class="rounded-lg shadow hover-img reveal">
+      <img src="/cb1b1005-92d8-473b-a2ee-b75a5fbe1f60.jpeg" class="rounded-lg shadow hover-img reveal">
+      <img src="/image (3).webp" class="rounded-lg shadow hover-img reveal">
+    </div>
+  </section>
+
+  <!-- Footer -->
+   
+ <!-- ✅ Footer with Animated Waves -->
+  <div class="Waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+  </div>
+
+  <footer class="bg-slate-900 text-slate-300 py-6 text-center">
+    <p>© 2025 AI Prompt Image Generator · Built for demo purposes</p>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Background Remover - Landing Page</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #6366f1;
+      --text: #1f2937;
+      --bg: #f3f4f6;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      background: linear-gradient(120deg,#eef2ff,#f3f4f6 60%);
+      color: var(--tex
+      t);
+      overflow-x:hidden;
+    }
+    header {
+      text-align:center;
+      padding: 40px 20px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #fff;
+      position: relative;
+    }
+    header h1 {
+      font-size: 42px;
+      font-weight: 800;
+      animation: fadeDown 1s ease;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: .9;
+      animation: fadeUp 1.2s ease;
+    }
+    @keyframes fadeDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    .hero {
+      text-align:center;
+      padding:80px 20px;
+    }
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+      animation: zoomIn 1s ease;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin:0 auto 30px;
+      color:#4b5563;
+      animation: fadeUp 1.5s ease;
+    }
+    @keyframes zoomIn { from {opacity:0; transform:scale(.9);} to {opacity:1; transform:scale(1);} }
+
+    .btn {
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:30px;
+      background: var(--primary);
+      color:#fff;
+      font-weight:600;
+      font-size:18px;
+      text-decoration:none;
+      transition: .3s;
+      animation: fadeUp 2s ease;
+    }
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow:0 8px 20px rgba(79,70,229,.3);
+    }
+
+    .preview {
+      background:#fff;
+      margin:80px auto;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 12px 40px rgba(0,0,0,.08);
+      max-width:1000px;
+      animation: fadeUp 2s ease;
+    }
+    .preview h3 {
+      text-align:center;
+      font-size:26px;
+      margin-bottom:20px;
+    }
+    iframe {
+      width:100%;
+      height:500px;
+      border:none;
+      border-radius:12px;
+    }
+
+    footer {
+      text-align:center;
+      padding:30px;
+      background:#002142;
+      font-size:14px;
+      color:#fafafa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>AI Background Remover</h1>
+    <p>Remove any photo background automatically in seconds</p>
+  </header>
+  <section class="hero">
+    <h2>✨ Make Your Photos Look Professional</h2>
+    <p>Upload any image and let our AI instantly remove the background. 
+       Perfect for product photos, social media posts, and creative projects.</p>
+     </section>
+<section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+  <!-- Text side -->
+  <div>
+    <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
+      New Tool
+    </span>
+    <h2 class="text-3xl md:text-4xl font-extrabold mt-3"> Free Instant Automatic Background Remover</h2>
+    <p class="text-slate-600 mt-3">
+      Upload any image and get a clean, transparent background in seconds — perfect for product photos, profile pics, and thumbnails.
+    </p>
+
+    <ul class="mt-5 space-y-3 text-slate-700">
+      <li class="flex gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        1-click remove — no manual selection required
+      </li>
+      <li class="flex gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        High-quality edges with hair & soft objects support
+      </li>
+      <li class="flex gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download as PNG (transparent) 
+      </li>
+    </ul>
+
+    <div class="mt-6 flex gap-3">
+      <a href="https://huggingface.co/spaces/KenjieDec/RemBG"
+         class="inline-flex items-center px-5 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow hover:bg-indigo-700 transition">
+        Try Background Remover
+      </a>
+      <a onclick="document.getElementById('target-area').scrollIntoView({behavior: 'smooth'});"  class="inline-flex items-center px-5 py-3 bg-white text-slate-700 font-semibold rounded-xl shadow hover:shadow-md transition">
+        How it works
+      </a>
+    </div>
+  </div>
+
+  <!-- Demo / Upload side (front-end only demo UI) -->
+  <div class="bg-white rounded-2xl shadow p-5">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <!-- Before -->
+     
+      <div>
+        <h3 class="font-semibold mb-2">Before</h3>
+        <div class="relative rounded-lg overflow-hidden border border-slate-200">
+          <img src="/myexample1 (1).JPG"
+               alt="Original image example" class="w-full h-48 object-cover">
+        </div>
+      </div>
+      <!-- After -->
+         <div>
+        <h3 class="font-semibold mb-2">Before</h3>
+        <div class="relative rounded-lg overflow-hidden border border-slate-200">
+          <img src="/myexample1 (2).JPG"
+               alt="Original image example" class="w-full h-48 object-cover">
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload UI (no backend; hook your logic later) -->
+    <div class="mt-5">
+      <label for="bgrem-file" class="block text-sm font-medium text-slate-700 mb-2">Try with your image</label>
+      <div class="flex items-center gap-3">
+        
+        <a
+               href="https://huggingface.co/spaces/KenjieDec/RemBG" class="px-6 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition">
+          Remove BG
+      </a>
+      </div>
+      <p class="text-xs text-slate-500 mt-2">Click the button "Remove BG" then you are ready to remove BG.</p>
+    </div>
+  </div>
+</section>
+<!-- Tiny CSS for checker background preview -->
+<style>
+  .checker-bg{
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+</style>
+
+
+  <!-- Product Quality Section -->
+ <div class="ddo-section-title">QUALITY</div>
+  <span class="block w-32 h-1 bg-indigo-600 mx-auto mt-2 rounded"></span>
+</h2>
+
+<div class="card" id="app">
+  <div class="header">
+    <div class="slider" id="slider" aria-label="Before and after image comparison">
+      
+      <!-- Bottom image -->
+      <div class="img-bottom">
+        <img src="/swiperouality (1).PNG" alt="Bottom image" />
+      </div>
+
+      <!-- Top image -->
+      <div class="img-top">
+        <img src="/swiperouality (2).PNG" alt="Top image" />
+      </div>
+
+      <!-- Divider line -->
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- Range input (slider control) -->
+      <input class="range" id="range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Compare slider" />
+
+      <!-- Handle -->
+      <div class="handle" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================== CSS ================== -->
+<style>
+  :root {
+    --pos: 50%;        /* Default slider position */
+    --handle-size: 42px;
+  }
+
+  .card {
+    width: min(100%, 999px);
+    border-radius: 20px;
+    border: 10px solid #ffffff;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #0b1220;
+    user-select: none;
+    touch-action: none;
+    overflow: hidden;
+    border-radius: 0 0 16px 16px;
+  }
+
+  /* Bottom & Top images */
+  .img-bottom,
+  .img-top {
+    position: absolute;
+    inset: 0;
+  }
+  .img-bottom img,
+  .img-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Top image is clipped */
+  .img-top {
+    clip-path: polygon(0 0, var(--pos) 0, var(--pos) 100%, 0 100%);
+  }
+
+  /* Divider line */
+  .divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--pos));
+    width: 3px;
+    transform: translateX(-1.5px);
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,.9), transparent);
+    pointer-events: none;
+  }
+.ddoo-footer {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Footer Background */
+  overflow: hidden;
+}
+
+
+  /* Range input */
+  .range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    appearance: none;
+    background: none;
+    margin: 0;
+    outline: none;
+    cursor: ew-resize;
+  }
+  .range::-webkit-slider-thumb { appearance: none; width: 0; height: 0; }
+  .range::-moz-range-thumb { width: 0; height: 0; border: 0; }
+
+  /* Handle */
+  .handle {
+    position: absolute;
+    top: 50%;
+    left: var(--pos);
+    transform: translate(-50%, -50%);
+    width: var(--handle-size);
+    height: var(--handle-size);
+    border-radius: 999px;
+    background: linear-gradient(145deg, #1e293b, #334155);
+    border: 2px solid #ffffff66;
+    box-shadow: 0 6px 14px rgba(0,0,0,.3), inset 0 0 4px rgba(255,255,255,.3);
+    display: grid;
+    place-items: center;
+  }
+
+  .handle::before {
+    content: "\2194"; /* ↔ */
+    font-size: 22px;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,.6);
+  }
+
+  /* Responsive */
+  @media (min-width: 300px) {
+    :root { --handle-size: 42px; }
+  }
+</style>
+
+<!-- ================== JavaScript ================== -->
+<script>
+  const root = document.documentElement;
+  const range = document.getElementById('range');
+  const slider = document.getElementById('slider');
+
+  function setPosFromValue(val) {
+    const clamped = Math.max(0, Math.min(100, Number(val)));
+    root.style.setProperty('--pos', clamped + '%');
+  }
+
+  // Update on range input
+  range.addEventListener('input', (e) => setPosFromValue(e.target.value));
+
+  // Dragging anywhere on slider
+  let dragging = false;
+
+  function updateFromClientX(clientX) {
+    const rect = slider.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percent = (x / rect.width) * 100;
+    setPosFromValue(percent);
+    range.value = Math.max(0, Math.min(100, percent)).toFixed(1);
+  }
+
+  slider.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    slider.setPointerCapture(e.pointerId);
+    updateFromClientX(e.clientX);
+  });
+
+  slider.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    updateFromClientX(e.clientX);
+  });
+
+  slider.addEventListener('pointerup', (e) => {
+    dragging = false;
+    slider.releasePointerCapture(e.pointerId);
+  });
+
+  // Keyboard control (← → keys)
+  range.addEventListener('keydown', (e) => {
+    const step = (e.shiftKey ? 5 : 1);
+    let v = parseFloat(range.value);
+    if (e.key === 'ArrowLeft') { v -= step; }
+    else if (e.key === 'ArrowRight') { v += step; }
+    else return;
+    e.preventDefault();
+    setPosFromValue(v);
+    range.value = Math.max(0, Math.min(100, v)).toFixed(1);
+  });
+
+  // Initialize position
+  setPosFromValue(range.value);
+</script>
+
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<div class="bg-slate-50 text-slate-800">
+
+  <section  class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left Side: Text -->
+    <div>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">instant Background Removal — no manual effort required</h1>
+      <p class="text-slate-600 mb-6">Remove backgrounds instantly with AI. In just 5 seconds, get clean, professional cutouts — no manual work or Photoshop needed. Perfect when you need quick results!.</p>
+      <a href="https://huggingface.co/spaces/KenjieDec/RemBG" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow hover:bg-indigo-700 transition">Try Now FREE !</a>
+    </div>
+
+    <!-- Right Side: Image -->
+    <div class="flex justify-center">
+      <img src="/INFEWSECOND.png" alt="AI generated sample" class="rounded-xl shadow-lg max-w-full h-auto">
+    </div>
+  </section>
+
+</div>
+<div class="bg-slate-50 text-slate-800">
+
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left Side: Text -->
+    <div>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">✨ High-Quality, Crystal Clear Editing</h1>
+      <p class="text-slate-600 mb-6">If you want your photo to look extra sharp, clear, and professionally finished, this option is for you. It takes a little more time, but the results are absolutely premium.</p>
+      <a href="https://huggingface.co/spaces/briaai/BRIA-RMBG-1.4" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow hover:bg-indigo-700 transition">Try For quality!</a>
+    </div>
+
+    <!-- Right Side: Image -->
+    <div class="flex justify-center">
+      <img src="/PREMIUMAIBGREMOVECLASSIC.jpg.png" alt="AI generated sample" class="rounded-xl shadow-lg max-w-full h-auto">
+    </div>
+  </section>
+
+</div>
+
+
+
+
+<style>
+    .ddoo-section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .ddo-section-title {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center; 
+        color: #333;
+    }
+    
+    .ddoo-scroll-container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .ddoo-scroll-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 10px 0;
+    }
+    
+    .ddoo-scroll-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .ddoo-item1 {
+      
+        flex: 0 0 auto;
+        width: 200px;
+        margin-left: 7px;
+        margin-right: 7px;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .ddoo-item1:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .ddoo-video-container1 {
+     
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .ddoo-video-container1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .ddoo-item-content {
+        padding: 15px;
+    }
+    
+    .ddoo-trending-section {
+        max-width: 1600px;
+    }
+
+   
+    @media (min-width: 1200px) and (max-width: 1599px) {
+ .ddoo-video-container1 {
+    height: 435px;
+  }
+   .ddoo-item1 {
+    width: 290px;
+  }
+
+    }
+     @media (min-width: 992px) and (max-width: 1199px) {
+ .ddoo-video-container1 {
+    height: 600px;
+  }
+   .ddoo-item1 {
+    width: 400px;
+  }
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+    
+    
+    .ddoo-video-container1 {
+    height: 390px;
+  }
+   .ddoo-item1 {
+    width: 260px;
+  }
+    }
+    /* Mobiles (≥576px and <768px) */
+    @media (min-width: 576px) and (max-width: 767px) {
+         .ddoo-video-container1 {
+    height: 300px;
+  }
+   .ddoo-item1 {
+    width: 200px;
+  }
+    }
+    @media (max-width: 575px) {
+       .ddoo-video-container1 {
+    height: 300px;
+  }
+   .ddoo-item1 {
+    width: 200px;
+  }
+    }
+     .Waves {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      bottom: 0;
+      left: 0;
+    }
+
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 100px;
+      background: url('/wave.png') repeat-x;
+      background-size: 1000px 100px;
+    }
+
+    .wave#wave1 {
+      z-index: 1000;
+      opacity: 1;
+      bottom: 0;
+      animation: animateWave 4s linear infinite;
+    }
+
+    .wave#wave2 {
+      z-index: 999;
+      opacity: 0.5;
+      bottom: 10px;
+      animation: animateWaveReverse 4s linear infinite;
+    }
+
+    .wave#wave3 {
+      z-index: 1000;
+      opacity: 0.2;
+      bottom: 15px;
+      animation: animateWave 3s linear infinite;
+    }
+
+    .wave#wave4 {
+      z-index: 999;
+      opacity: 0.7;
+      bottom: 20px;
+      animation: animateWaveReverse 3s linear infinite;
+    }
+
+    @keyframes animateWave {
+      0% {
+        background-position-x: 1000px;
+      }
+      100% {
+        background-position-x: 0px;
+      }
+    }
+
+    @keyframes animateWaveReverse {
+      0% {
+        background-position-x: 0px;
+      }
+      100% {
+        background-position-x: 1000px;
+      }
+    }
+    
+
+
+/* Smooth card hover effect */
+.hover-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Image hover zoom */
+.hover-img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.hover-card:hover .hover-img {
+  transform: scale(1.05);
+ 
+}
+
+/* Title & Text subtle animation */
+.hover-card h3,
+.hover-card p {
+  transition: color 0.3s ease-in-out;
+}
+
+
+ .step-section {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .step-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    /* Left Side Image */
+    .step-image {
+      flex: 1;
+     
+      display: flex;
+      justify-content: center;
+    }
+/* Small devices (≥600px) */
+@media (min-width: 300px) {
+   .step-image img {
+    border-radius: 20px; 
+ }
+}
+@media (min-width: 350px) {
+   .step-image img {
+    border-radius: 25px;
+ }
+}
+@media (min-width: 400px) {
+   .step-image img {
+    border-radius: 30px;
+ }
+}
+@media (min-width: 450px) {
+   .step-image img {
+    border-radius: 35px;
+ } 
+}
+@media (min-width: 500px) {
+   .step-image img {
+    border-radius: 40px;
+ }
+}
+@media (min-width: 550px) {
+   .step-image img {
+    border-radius: 45px;
+ }
+}
+@media (min-width: 600px) {
+   .step-image img {
+    border-radius: 50px;
+ }
+}
+@media (min-width: 700px) {
+   .step-image img {
+    border-radius: 60px;
+ }
+}
+
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+   .step-image img {
+    border-radius: 60px;
+ }
+}
+@media (min-width: 850px) {
+   .step-image img {
+    border-radius: 70px;
+ }
+}
+@media (min-width: 950px) {
+   .step-image img {
+    border-radius: 80px;
+ }
+}
+
+/* Laptops (≥1024px) */
+@media (min-width: 1024px) {
+ .step-image img {
+    border-radius: 90px;
+ }
+}
+
+/* Desktops (≥1280px) */
+@media (min-width: 1150px) {
+  .step-image img {
+    border-radius: 95px;
+ }
+}
+@media (min-width: 1250px) {
+  .step-image img {
+    border-radius: 95px;  
+ }
+}
+@media (min-width: 1350px) {
+  .step-image img {
+    border-radius: 98px;
+ }
+}
+
+
+/* Large Screens (≥1440px) */
+@media (min-width: 1440px) {
+  .step-image img {
+    border-radius: 100px;
+ }
+}
+
+/* Ultra Wide (≥1920px) */
+@media (min-width: 1920px) {
+ .step-image img {
+    border-radius: 100px;
+ }
+  
+}
+    .step-image img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+     
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .step-image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Right Side Content */
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .step-content p {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .step-content a {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #4f46e5, #6366f1);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(79,70,229,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .step-content a:hover {
+      background: #4338ca;
+      transform: scale(1.05);
+    }
+
+
+</style>
+
+<section class="step-section">
+    <div class="step-container">
+      
+      <!-- Left Side Image -->
+      <div class="step-image">
+        <img src="/mobilestepbgrem (1).PNG" alt="AI generated sample">
+      </div>
+      
+      <!-- Right Side Content -->
+      <div id="target-area" class="step-content">
+        <h1>STEP 1</h1>
+        <p> Drop image or click to uplord <br>
+Uplord the image (the image you want) in the box.
+wait for uplord image. </p>
+
+        <a href="https://huggingface.co/spaces/KenjieDec/RemBG">Uplord Image</a>
+      </div>
+
+    </div>
+    
+  </section>
+
+  <section class="step-section">
+    <div class="step-container">
+      <!-- Right Side Content -->
+      <div class="step-content">
+        <h1>STEP 2</h1>
+        <p>Click to Process Image<BR>When the image is Uplord, click the process button .
+          <br>wait for few seconds
+
+ </p>
+        <a href="https://huggingface.co/spaces/KenjieDec/RemBG">Process Image</a>
+      </div>
+ <!-- Left Side Image -->
+      <div class="step-image">
+        <img src="/mobilestepbgrem (2).PNG" alt="AI generated sample">
+      </div>
+    </div>
+  </section>
+  <section class="step-section">
+    <div class="step-container">
+      
+      <!-- Left Side Image -->
+      <div class="step-image">
+        <img src="/mobilestepbgrem (3).PNG" alt="AI generated sample">
+      </div>
+      
+      <!-- Right Side Content -->
+      <div class="step-content">
+        <h1>STEP 3</h1>
+        <p>Click to downlord <BR>
+
+After 
+Tap Download / Save image to save it to your device..</p>
+</p>
+        <a href="https://huggingface.co/spaces/KenjieDec/RemBG">Downlord Image</a>
+      </div>
+
+    </div>
+    
+  </section>
+<div class="ddoo-trending-section">
+      <br>  <br>  
+        <div class="ddo-section-title">COMING SOON</div>
+    
+    
+    <div class="ddoo-scroll-container">
+        <div class="ddoo-scroll-wrapper" id="ddooScrollWrapper">
+            
+            <div class="ddoo-item1">
+                <div class="ddoo-video-container1">
+                    <img src="/BGCHANGER (1).webp" alt="AI generated sample">
+                    </div>
+              
+            </div>
+
+            <div class="ddoo-item1">
+                <div class="ddoo-video-container1">
+                     <img src="/output (1).png" alt="AI generated sample">
+                  </div>
+               
+            </div>
+
+            <div class="ddoo-item1">
+                <div class="ddoo-video-container1">
+                  <img src="/BGCHANGER (3).webp" alt="AI generated sample">
+                        
+                </div>
+              
+            </div>
+
+            <div class="ddoo-item1">
+                <div class="ddoo-video-container1">
+                    <img src="/BGCHNAGER4.jpeg" alt="AI generated sample">
+                  </div>
+              
+            </div>
+
+           <div class="ddoo-item1">
+                <div class="ddoo-video-container1">
+                   <img src="/BGCHANGER (2).webp" alt="AI generated sample">
+                     </div>
+              
+            </div>
+
+           <div class="ddoo-item1">
+                <div class="ddoo-video-container1">
+                  <img src="/BGCHANGER (1).webp" alt="AI generated sample">
+                    </div>
+              
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ddooScrollWrapper = document.getElementById('ddooScrollWrapper');
+        const ddooVideos = document.querySelectorAll('.ddoo-video-container1 video');
+        let ddooAutoScrollInterval;
+        const ddooScrollDelay = 3000; // 3 seconds
+        const ddooScrollAmount = 210; // How much to scroll each step
+        
+        // Video autoplay on visible
+        const ddooVideoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(e => console.log("Autoplay prevented:", e));
+                } else {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        ddooVideos.forEach(video => {
+            ddooVideoObserver.observe(video);
+            video.muted = true;
+        });
+        
+        // Auto-scroll function
+        function ddooAutoScroll() {
+            if (ddooScrollWrapper.scrollLeft + ddooScrollWrapper.clientWidth >= ddooScrollWrapper.scrollWidth - 10) {
+                ddooScrollWrapper.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                ddooScrollWrapper.scrollBy({
+                    left: ddooScrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        function ddooStartAutoScroll() {
+            clearInterval(ddooAutoScrollInterval);
+            ddooAutoScrollInterval = setInterval(ddooAutoScroll, ddooScrollDelay);
+        }
+        
+        ddooScrollWrapper.addEventListener('mouseenter', () => {
+            clearInterval(ddooAutoScrollInterval);
+        });
+        
+        ddooScrollWrapper.addEventListener('mouseleave', () => {
+            ddooStartAutoScroll();
+        });
+        
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                ddooStartAutoScroll();
+            }
+        });
+        
+        setTimeout(ddooStartAutoScroll, 1000);
+    });
+</script>
+<section class="hero">
+  <h2>✨Help us grow free tools!</h2>
+  <p>Support this AI tool so we can bring more free features to you faster.</p>
+  <a href="https://huggingface.co/spaces/KenjieDec/RemBG" target="_blank" class="btn">Try Now</a>
+<section class="bg-slate-100 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center mb-8 reveal">Other Tools You Might Like</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow p-4 hover-card reveal">
+          <a href="/MyImageGenerator.HTML"><img src="/PREMIUMAIBGREMOVE.jpg" class="rounded-md mb-3 hover-img" alt="Tool 1"></a>
+          <h3 class="font-semibold text-lg">AI Image Generator</h3>
+          <p class="text-sm text-slate-600">Turn prompts into stunning images.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 hover-card reveal">
+          <img src="/comingsoon.png" class="rounded-md mb-3 hover-img" alt="Tool 2">
+          <h3 class="font-semibold text-lg">AI Music Creator</h3>
+          <p class="text-sm text-slate-600">Compose background music with AI.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 hover-card reveal">
+          <img src="/comingsoon.png" class="rounded-md mb-3 hover-img" alt="Tool 3">
+          <h3 class="font-semibold text-lg">AI Video Editor</h3>
+          <p class="text-sm text-slate-600">Edit and enhance videos automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+     <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-center mb-8 reveal">Example AI Generated Images</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="/AI_BG_REMOVER_EXAMPLE_1.PNG" class="rounded-lg shadow hover-img reveal">
+      <img src="/AI_BG_REMOVER_EXAMPLE_2.PNG" class="rounded-lg shadow hover-img reveal">
+      <img src="/AI_BG_REMOVER_EXAMPLE_3.PNG" class="rounded-lg shadow hover-img reveal">
+      <img src="/AI_BG_REMOVER_EXAMPLE_4.PNG" class="rounded-lg shadow hover-img reveal">
+      <img src="/AI_BG_REMOVER_EXAMPLE_5.PNG" class="rounded-lg shadow hover-img reveal">
+      <img src="/AI_BG_REMOVER_EXAMPLE_6.PNG" class="rounded-lg shadow hover-img reveal">
+      </div>
+  </section>
+  </div>
+</section>
+  <div class="Waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+  </div>
+  <footer>© 2025 AI Background Remover • All rights reserved</footer>
+</body>
+</html>
